@@ -65,15 +65,12 @@ public class Main {
 	// Quem são os 10 jogadores mais velhos (use como critério de desempate o campo `eur_wage`)?
 	// (utilize as colunas `full_name` e `birth_date`)
 	public List<String> q5() {
-		List<String> lista = this.jogadores
+		return this.jogadores
 				.stream()
 				.sorted(Comparator.comparing(Jogador::getNascimento).thenComparing(Jogador::getSalario))
 				.limit(10)
 				.map(Jogador::getNomeCompleto)
 				.collect(toList());
-
-		System.out.println(lista);
-		return lista;
 	}
 
 	// Conte quantos jogadores existem por idade. Para isso, construa um mapa onde as chaves são as idades e os valores a contagem.
